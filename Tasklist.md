@@ -1,22 +1,29 @@
 **Task - Assignee**
+
 subject to change
+------------------------------
 
-Design a mockup UI
+Design a UX stategy - 
 
-Create a model database
+Design a mockup UI - 
 
-Research information for database
+Create a model database - 
 
-Investigate best operating system to use
+Research information for database - 
 
-Create unit tests
+Research how to best use Xcode - 
 
-Validate application
+Create unit tests - 
 
-Refine UI after meeting with Dr. Han
+Validate application - 
 
-Design logo for product
+Refine UI after meeting with Dr. Han - 
 
-Develop a data entering or mining solution
+Design logo and graphics for product - 
 
-Research a way to host database on a server so the app can fetch information
+Develop a data entering or mining solution - 
+
+Research a way to host database on a server - 
+
+Investigate possible calandar integration with google/apple/etc - 
+
