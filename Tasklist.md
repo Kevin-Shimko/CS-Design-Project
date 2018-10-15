@@ -1,6 +1,4 @@
-**Task - Assignee**
-
-subject to change
+**Task - Assignee** // subject to change
 ------------------------------
 
 Design a UX stategy - 
