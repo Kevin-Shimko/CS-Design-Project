@@ -6,7 +6,7 @@
 * Sam Zdolshek: zdolshsj@mail.uc.edu
 
 ### Facualty Advisor
-* TBD
+* Chia Han
 
 ### Project Background
 We want to create a social media service to view, interact, and track what entertainment and product release dates your friends are looking forward to.
