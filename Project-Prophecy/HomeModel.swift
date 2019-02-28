@@ -1,10 +1,10 @@
 import Foundation
 
-protcol HomeModelProtocol: class {
+protocol HomeModelProtocol: class {
      func itemsDownload(items: NSArray)
 }
 
-class HomeModel: NSObject, NSURLSessionDataDelegate {
+class HomeModel: NSObject, URLSessionDataDelegate {
     
     weak var delegate: HomeModelProtocol!
     
@@ -17,7 +17,8 @@ class HomeModel: NSObject, NSURLSessionDataDelegate {
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
-        let task = defaultSession.dataTask(with: url){ (data, response, error) in
+        let task = defaultSession.dataTask(with: url)
+        { (data, response, error) in
         
           if error != nil{
               print("Failed to download data")
@@ -25,7 +26,7 @@ class HomeModel: NSObject, NSURLSessionDataDelegate {
               print("Data downloaded")
               self.parseJSON(data!)
           }
-      }
+        }
       
       task.resume()
     }
@@ -43,29 +44,27 @@ class HomeModel: NSObject, NSURLSessionDataDelegate {
         let movies = NSMutableArray()
         
         
-        for i in 0 .. < jsonResult.count
+        for i in 0 ... jsonResult.count
         {
             jsonElement = jsonResult[i] as! NSDictionary
             
             let movie = MovieModel()
             
-            if let id = jsonElement["id"] as? int,
+            if let movie_id = jsonElement["movie_id"] as? Int,
                let title = jsonElement["title"] as? String,
-               let overview = jsonElement["overview"] as? String,
-               let releaseDate = jsonElement["releaseDate"] as? Date,
-               let posterPath = jsonElement["posterPath"] as? String
+               let release_date = jsonElement["releaseDate"] as? Date
             {
-                movie.id = id
+                movie.movie_id = movie_id
                 movie.title = title
-                movie.overview = overview
-                movie.releaseDate = releaseDate
-                movie.posterPath = posterPath
+                movie.release_date = release_date
             }
             
             movies.add(movie)
         }
         
-        DispatchQueue.main.async(execute: { () -> Void in self.delegate.itemsDownloaded(items: movies) })
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.delegate.itemsDownload(items: movies)
+        })
     }
 
 

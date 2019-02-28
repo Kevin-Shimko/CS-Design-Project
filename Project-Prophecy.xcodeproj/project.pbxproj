@@ -15,6 +15,8 @@
 		DAA9804A2226058500FBA66F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA980482226058500FBA66F /* LaunchScreen.storyboard */; };
 		DAA980552226058600FBA66F /* Project_ProphecyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA980542226058600FBA66F /* Project_ProphecyTests.swift */; };
 		DAA980602226058600FBA66F /* Project_ProphecyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9805F2226058600FBA66F /* Project_ProphecyUITests.swift */; };
+		DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9806D222727C200FBA66F /* MovieModel.swift */; };
+		DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9806F222727CE00FBA66F /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		DAA9805B2226058600FBA66F /* Project-ProphecyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-ProphecyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA9805F2226058600FBA66F /* Project_ProphecyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_ProphecyUITests.swift; sourceTree = "<group>"; };
 		DAA980612226058600FBA66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAA9806D222727C200FBA66F /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		DAA9806F222727CE00FBA66F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		DAA9803C2226058300FBA66F /* Project-Prophecy */ = {
 			isa = PBXGroup;
 			children = (
+				DAA9806F222727CE00FBA66F /* HomeModel.swift */,
+				DAA9806D222727C200FBA66F /* MovieModel.swift */,
 				DAA9803D2226058300FBA66F /* AppDelegate.swift */,
 				DAA9803F2226058300FBA66F /* FirstViewController.swift */,
 				DAA980412226058300FBA66F /* SecondViewController.swift */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */,
 				DAA980422226058300FBA66F /* SecondViewController.swift in Sources */,
 				DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */,
+				DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */,
 				DAA980402226058300FBA66F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

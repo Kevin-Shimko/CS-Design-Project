@@ -1,26 +1,27 @@
+import Foundation
+
 class MovieModel : NSObject {
   
-  var id: int
+  var movie_id: Int?
   var title: String?
-  var releaseDate: Date?
-  var overview: String?
-  var posterPath: String?
+  var release_date: Date?
+  //var overview: String?
+  //var posterPath: String?
+    
+    override init(){
+        
+    }
   
-  override init(){
-  
-  }
-  
-  init(id: int, title: String, releaseDate: String, overview: String, posterPath: String)
+  init(movie_id: Int, title: String, release_date: Date)
   {
-      self.id = id
+      self.movie_id = movie_id
       self.title = title
-      self.releaseDate = releaseDate
-      self.overview = overview
-      self.posterPath = posterPath
+      self.release_date = release_date
+
   }
   
   override var description: String {
-      return "id: \(id), Title: \(title), Release Date: \(releaseDate), Overview: \(overview), Poster Path: \(posterPath)"
+    return "movie_id: \(String(describing: movie_id)), title: \(String(describing: title)), Release Date: \(String(describing: release_date))"
   }
 
 }
