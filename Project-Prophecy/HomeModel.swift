@@ -44,15 +44,15 @@ class HomeModel: NSObject, URLSessionDataDelegate {
         let movies = NSMutableArray()
         
         
-        for i in 0 ... jsonResult.count
+        for i in 0 ... jsonResult.count-1
         {
             jsonElement = jsonResult[i] as! NSDictionary
             
             let movie = MovieModel()
             
-            if let movie_id = jsonElement["movie_id"] as? Int,
+            if let movie_id = jsonElement["movie_id"] as? String,
                let title = jsonElement["title"] as? String,
-               let release_date = jsonElement["releaseDate"] as? Date
+               let release_date = jsonElement["releaseDate"] as? String
             {
                 movie.movie_id = movie_id
                 movie.title = title

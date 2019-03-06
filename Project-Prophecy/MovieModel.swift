@@ -2,17 +2,15 @@ import Foundation
 
 class MovieModel : NSObject {
   
-  var movie_id: Int?
+  var movie_id: String?
   var title: String?
-  var release_date: Date?
-  //var overview: String?
-  //var posterPath: String?
+  var release_date: String?
     
     override init(){
         
     }
   
-  init(movie_id: Int, title: String, release_date: Date)
+  init(movie_id: String, title: String, release_date: String)
   {
       self.movie_id = movie_id
       self.title = title

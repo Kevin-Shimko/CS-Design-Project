@@ -10,14 +10,6 @@ import UIKit
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeModelProtocol {
     
-    
-    func itemsDownload(items: NSArray) {
-        feedItems = items
-        self.listTableView.reloadData()
-    }
-    
-    
-    
     var feedItems: NSArray = NSArray()
     var selectedMovie : MovieModel = MovieModel()
     @IBOutlet weak var listTableView: UITableView!
@@ -32,6 +24,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let homeModel = HomeModel()
         homeModel.delegate = self
         homeModel.downloadItems()
+    }
+    
+    func itemsDownload(items: NSArray) {
+        feedItems = items
+        self.listTableView.reloadData()
     }
     
     
