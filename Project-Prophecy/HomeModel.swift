@@ -52,7 +52,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             
             if let movie_id = jsonElement["movie_id"] as? String,
                let title = jsonElement["title"] as? String,
-               let release_date = jsonElement["releaseDate"] as? String
+               let release_date = jsonElement["release_date"] as? String
             {
                 movie.movie_id = movie_id
                 movie.title = title

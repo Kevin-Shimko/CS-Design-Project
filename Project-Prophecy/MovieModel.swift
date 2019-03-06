@@ -19,7 +19,7 @@ class MovieModel : NSObject {
   }
   
   override var description: String {
-    return "movie_id: \(String(describing: movie_id)), title: \(String(describing: title)), Release Date: \(String(describing: release_date))"
+    return "movie_id: \(movie_id), title: \(title), Release Date: \(release_date)"
   }
 
 }
