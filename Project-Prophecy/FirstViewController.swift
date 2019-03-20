@@ -8,18 +8,19 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeModelProtocol {
+class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, HomeModelProtocol {
     
     var feedItems: NSArray = NSArray()
     var selectedMovie : MovieModel = MovieModel()
-    @IBOutlet weak var listTableView: UITableView!
+    let reuseIdentifier = "movie_cell"
+    
+    @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.listTableView.delegate = self
-        self.listTableView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         let homeModel = HomeModel()
         homeModel.delegate = self
@@ -28,28 +29,47 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func itemsDownload(items: NSArray) {
         feedItems = items
-        self.listTableView.reloadData()
+        //self.listTableView.reloadData()
+        self.collectionView.reloadData()
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return the number of feed items
         return feedItems.count
-        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //let homeModel = HomeModel()
+        //homeModel.downloadItems()
         
         // Retrieve cell
-        let cellIdentifier: String = "BasicCell"
-        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        let movie_cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MovieCollectionViewCell
+        
+        
         // Get the location to be shown
         let item: MovieModel = feedItems[indexPath.row] as! MovieModel
-        // Get references to labels of cell
-        myCell.textLabel!.text = item.title
         
-        return myCell
+        let titleLabel = UILabel()
+        let releaseLabel = UILabel()
+        
+        titleLabel.text = item.title
+        releaseLabel.text = item.release_date
+        
+        movie_cell?.movie_title = titleLabel
+        movie_cell?.movie_releaseDate = releaseLabel
+        
+        // Get references to labels of cell
+        //movie_cell?.movie_poster.image = UIImage(named: item.poster_path)
+        movie_cell!.movie_title.text = item.title
+        movie_cell!.movie_releaseDate!.text = item.release_date
+        
+        movie_cell?.displayContent(title: item.title!,release_date: item.release_date!)
+
+        return movie_cell!
+        
     }
     
+
 }
 

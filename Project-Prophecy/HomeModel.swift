@@ -10,7 +10,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
     
     var data = Data()
 
-    let urlPath: String = "http://prophecyapplication.com/service.php"
+    let urlPath: String = "http://prophecyapplication.com/Get.php"
     
     func downloadItems(){
         
@@ -50,12 +50,18 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             
             let movie = MovieModel()
             
-            if let movie_id = jsonElement["movie_id"] as? String,
+            if let id = jsonElement["id"] as? String,
                let title = jsonElement["title"] as? String,
+               let poster_path = jsonElement["poster_path"] as? String,
+               let backdrop_path = jsonElement["backdrop_path"] as? String,
+               let overview = jsonElement["overview"] as? String,
                let release_date = jsonElement["release_date"] as? String
             {
-                movie.movie_id = movie_id
+                movie.id = id
                 movie.title = title
+                movie.poster_path = poster_path
+                movie.backdrop_path = backdrop_path
+                movie.overview = overview
                 movie.release_date = release_date
             }
             

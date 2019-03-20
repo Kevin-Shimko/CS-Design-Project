@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */; };
 		DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9803D2226058300FBA66F /* AppDelegate.swift */; };
 		DAA980402226058300FBA66F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9803F2226058300FBA66F /* FirstViewController.swift */; };
 		DAA980422226058300FBA66F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA980412226058300FBA66F /* SecondViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAA9803A2226058300FBA66F /* Project-Prophecy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Prophecy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA9803D2226058300FBA66F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA9803F2226058300FBA66F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				DAA980462226058500FBA66F /* Assets.xcassets */,
 				DAA980482226058500FBA66F /* LaunchScreen.storyboard */,
 				DAA9804B2226058500FBA66F /* Info.plist */,
+				DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */,
 			);
 			path = "Project-Prophecy";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */,
 				DAA980422226058300FBA66F /* SecondViewController.swift in Sources */,
 				DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */,
+				DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */,
 				DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */,
 				DAA980402226058300FBA66F /* FirstViewController.swift in Sources */,
 			);
