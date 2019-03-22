@@ -13,6 +13,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     var feedItems: NSArray = NSArray()
     var selectedMovie : MovieModel = MovieModel()
     let reuseIdentifier = "movie_cell"
+    var apiImageLink = "https://image.tmdb.org/t/p/w780/"
+    
+    var poster: UIImage = UIImage()
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -29,7 +32,6 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func itemsDownload(items: NSArray) {
         feedItems = items
-        //self.listTableView.reloadData()
         self.collectionView.reloadData()
     }
     
@@ -40,36 +42,27 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //let homeModel = HomeModel()
-        //homeModel.downloadItems()
-        
         // Retrieve cell
         let movie_cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MovieCollectionViewCell
-        
         
         // Get the location to be shown
         let item: MovieModel = feedItems[indexPath.row] as! MovieModel
         
-        let titleLabel = UILabel()
-        let releaseLabel = UILabel()
+        //Get Poster background
+        let apiCall = apiImageLink + item.poster_path!
+        if let url = URL(string: apiCall){
+            do {
+                let data = try Data(contentsOf: url)
+                poster = UIImage(data: data)!
+            } catch let err{
+                print("Error : \(err.localizedDescription)")
+            }
+        }
         
-        titleLabel.text = item.title
-        releaseLabel.text = item.release_date
-        
-        movie_cell?.movie_title = titleLabel
-        movie_cell?.movie_releaseDate = releaseLabel
-        
-        // Get references to labels of cell
-        //movie_cell?.movie_poster.image = UIImage(named: item.poster_path)
-        movie_cell!.movie_title.text = item.title
-        movie_cell!.movie_releaseDate!.text = item.release_date
-        
-        movie_cell?.displayContent(title: item.title!,release_date: item.release_date!)
+        movie_cell?.displayContent(title: item.title!,release_date: item.release_date!, poster: poster)
 
         return movie_cell!
-        
     }
-    
 
 }
 
