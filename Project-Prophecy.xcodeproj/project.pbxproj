@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2A3C5522513A700065B7B4 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A3C5422513A700065B7B4 /* GameModel.swift */; };
+		DA2A3C5722513B900065B7B4 /* GameHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A3C5622513B900065B7B4 /* GameHomeModel.swift */; };
 		DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */; };
 		DA6B926E224BFAC400C61DDE /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */; };
 		DA6B9270224BFAE200C61DDE /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA2A3C5422513A700065B7B4 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		DA2A3C5622513B900065B7B4 /* GameHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHomeModel.swift; sourceTree = "<group>"; };
 		DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				DA882AC2224C0DD100B09765 /* Collection View Cells */,
 				DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */,
 				DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */,
+				DA2A3C5622513B900065B7B4 /* GameHomeModel.swift */,
+				DA2A3C5422513A700065B7B4 /* GameModel.swift */,
 			);
 			path = "Project-Prophecy";
 			sourceTree = "<group>";
@@ -296,6 +302,8 @@
 				DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */,
 				DA6B9274224BFE4F00C61DDE /* TelevisionHomeModel.swift in Sources */,
 				DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */,
+				DA2A3C5522513A700065B7B4 /* GameModel.swift in Sources */,
+				DA2A3C5722513B900065B7B4 /* GameHomeModel.swift in Sources */,
 				DA95E52C2242DB1E00887D6C /* DetailsViewController.swift in Sources */,
 				DA6B9270224BFAE200C61DDE /* GameCollectionViewCell.swift in Sources */,
 				DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */,

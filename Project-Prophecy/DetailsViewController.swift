@@ -21,21 +21,39 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var details_overview: UILabel!
     
     var movieToReceieve: MovieModel?
+    var gameToReceive: GameModel?
+    var showToReceive: TelevisionModel?
+    var objectType : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        details_title.text = movieToReceieve?.title
-        GetPoster(posterPath: movieToReceieve!.poster_path!)
-        details_poster.image = poster
-        details_overview.text = movieToReceieve?.overview
-        details_releaseDate.text = movieToReceieve?.release_date
+        if(objectType == "Movie"){
+            details_title.text = movieToReceieve?.title
+            GetPoster(posterPath: apiImageLink + movieToReceieve!.poster_path!)
+            details_poster.image = poster
+            details_overview.text = movieToReceieve?.overview
+            details_releaseDate.text = movieToReceieve?.release_date
+        }
+        else if(objectType == "Game"){
+            details_title.text = gameToReceive?.title
+            GetPoster(posterPath: gameToReceive!.poster_path!)
+            details_poster.image = poster
+            details_overview.text = gameToReceive?.overview
+            details_releaseDate.text = gameToReceive?.release_date
+        }else{
+            details_title.text = showToReceive?.title
+            GetPoster(posterPath: apiImageLink + showToReceive!.poster_path!)
+            details_poster.image = poster
+            details_overview.text = showToReceive?.overview
+            details_releaseDate.text = showToReceive?.air_date
+        }
+
     }
     
     func GetPoster(posterPath: String){
-        let apiCall = apiImageLink + posterPath
-        if let url = URL(string: apiCall){
+        if let url = URL(string: posterPath){
             do {
                 let data = try Data(contentsOf: url)
                 poster = UIImage(data: data)!

@@ -79,7 +79,7 @@
                                             <outlet property="movie_poster" destination="ddh-Gv-wSw" id="i53-F3-g47"/>
                                             <outlet property="movie_releaseDate" destination="xR9-yb-oxY" id="qfp-Yz-nIQ"/>
                                             <outlet property="movie_title" destination="82w-O7-TOf" id="oOq-19-HNv"/>
-                                            <segue destination="KoL-2E-Inm" kind="show" id="Htw-Ic-Qzh"/>
+                                            <segue destination="KoL-2E-Inm" kind="show" identifier="MovieDetails" id="p4t-DH-4fm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -140,6 +140,7 @@
                                             <outlet property="game_poster" destination="TEj-b3-E5c" id="oft-6m-WGx"/>
                                             <outlet property="game_releaseDate" destination="YUg-D3-GC1" id="Buk-1L-CMK"/>
                                             <outlet property="game_title" destination="iny-Zb-w8w" id="NpE-5j-3MH"/>
+                                            <segue destination="KoL-2E-Inm" kind="show" identifier="GameDetails" id="bOn-Zm-hza"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -201,6 +202,7 @@
                                             <outlet property="tv_poster" destination="wIU-qY-E46" id="fn8-qC-8KY"/>
                                             <outlet property="tv_releaseDate" destination="jFW-IP-L6z" id="Ms2-jL-7l7"/>
                                             <outlet property="tv_title" destination="X9h-gr-dIA" id="w7B-uJ-92F"/>
+                                            <segue destination="KoL-2E-Inm" kind="show" identifier="TVDetails" id="aFp-hz-h1N"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -208,11 +210,6 @@
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="RCz-wu-UlQ"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc7-A4-PQb">
-                                <rect key="frame" x="101" y="327" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -226,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="-41"/>
+            <point key="canvasLocation" x="121" y="-41"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="MBc-Wv-P8D">
@@ -243,13 +240,13 @@
                                     <navigationItem title="Details" id="Zoj-fL-akG">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="UdR-AE-l3g">
                                             <connections>
-                                                <segue destination="9pv-A4-QxB" kind="show" id="7UF-5Q-Pjf"/>
+                                                <segue destination="9pv-A4-QxB" kind="show" id="BB2-5U-EKH"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="details_poster" translatesAutoresizingMaskIntoConstraints="NO" id="zy6-9j-clP" userLabel="details_poster">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="details_poster" translatesAutoresizingMaskIntoConstraints="NO" id="zy6-9j-clP" userLabel="details_poster">
                                 <rect key="frame" x="44" y="138" width="287" height="437"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -289,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aT2-Jl-kzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2040.8" y="-41.379310344827587"/>
+            <point key="canvasLocation" x="1183" y="-41"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -352,7 +349,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Htw-Ic-Qzh"/>
-        <segue reference="7UF-5Q-Pjf"/>
+        <segue reference="aFp-hz-h1N"/>
+        <segue reference="BB2-5U-EKH"/>
     </inferredMetricsTieBreakers>
 </document>

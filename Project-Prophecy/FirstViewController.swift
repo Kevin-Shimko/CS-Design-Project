@@ -8,10 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, HomeModelProtocol,TVHomeModelProtocol {
+class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, HomeModelProtocol,TVHomeModelProtocol, GameHomeModelProtocol {
     
     var feedItems: NSArray = NSArray()
     var feedTVItems: NSArray = NSArray()
+    var feedGameItems: NSArray = NSArray()
     
     var dataToSend: AnyObject?
     //var selectedMovie : MovieModel = MovieModel() //??
@@ -36,8 +37,12 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.tv_collectionView.delegate = self
         self.tv_collectionView.dataSource = self
         
+        self.game_collectionView.delegate = self
+        self.game_collectionView.dataSource = self
+        
         self.view.addSubview(collectionView)
         self.view.addSubview(tv_collectionView)
+        self.view.addSubview(game_collectionView)
         
         let homeModel = HomeModel()
         homeModel.delegate = self
@@ -46,6 +51,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         let tvHomeModel = TelevisionHomeModel()
         tvHomeModel.delegate = self
         tvHomeModel.downloadItems()
+        
+        let gameHomeModel = GameHomeModel()
+        gameHomeModel.delegate = self
+        gameHomeModel.downloadItems()
     }
     
     func itemsDownload(items: NSArray) {
@@ -58,10 +67,18 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.tv_collectionView.reloadData()
     }
     
+    func gameItemsDownload(items: NSArray){
+        feedGameItems = items
+        self.game_collectionView.reloadData()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return the number of feed items
         if collectionView == self.collectionView{
             return feedItems.count
+        }
+        else if collectionView == self.game_collectionView{
+            return feedGameItems.count
         }
         else{
             return feedTVItems.count
@@ -92,6 +109,28 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             return movie_cell!
         }
+        else if collectionView == self.game_collectionView {
+            // Retrieve cell
+            let game_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "game_cell", for: indexPath) as? GameCollectionViewCell
+            
+            // Get the location to be shown
+            let item: GameModel = feedGameItems[indexPath.row] as! GameModel
+            
+            //Get Poster background
+            let apiCall = item.poster_path!
+            if let url = URL(string: apiCall){
+                do {
+                    let data = try Data(contentsOf: url)
+                    poster = UIImage(data: data)!
+                } catch let err{
+                    print("Error : \(err.localizedDescription)")
+                }
+            }
+            
+            game_cell?.displayContent(title: item.title!,release_date: item.release_date!, poster: poster)
+            
+            return game_cell!
+        }
         else{
             let tv_cell = tv_collectionView.dequeueReusableCell(withReuseIdentifier: "tv_cell", for: indexPath) as? TVCollectionViewCell
             
@@ -119,17 +158,35 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        //if(segue.identifier == "DetailsViewController"){
+        
+        if(segue.identifier == "MovieDetails"){
             let detail = segue.destination as! DetailsViewController
             let indexPaths = self.collectionView!.indexPathsForSelectedItems!
             let indexPath = indexPaths[0] as NSIndexPath
             let movie: MovieModel = feedItems[indexPath.row] as! MovieModel
         
-        
             detail.movieToReceieve = movie
-        //}
+            detail.objectType = "Movie"
+        }
+        else if (segue.identifier == "GameDetails"){
+            let detail = segue.destination as! DetailsViewController
+            let indexPaths = self.game_collectionView!.indexPathsForSelectedItems!
+            let indexPath = indexPaths[0] as NSIndexPath
+            let game: GameModel = feedGameItems[indexPath.row] as! GameModel
+            
+            detail.gameToReceive = game
+            detail.objectType = "Game"
+        }
+        else{
+            let detail = segue.destination as! DetailsViewController
+            let indexPaths = self.tv_collectionView!.indexPathsForSelectedItems!
+            let indexPath = indexPaths[0] as NSIndexPath
+            let show: TelevisionModel = feedTVItems[indexPath.row] as! TelevisionModel
+            
+            detail.showToReceive = show
+            detail.objectType = "Show"
+        }
     }
     
-
 }
 
