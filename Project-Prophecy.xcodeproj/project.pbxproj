@@ -10,6 +10,8 @@
 		DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */; };
 		DA6B926E224BFAC400C61DDE /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */; };
 		DA6B9270224BFAE200C61DDE /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */; };
+		DA6B9272224BFCCE00C61DDE /* TelevisionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */; };
+		DA6B9274224BFE4F00C61DDE /* TelevisionHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */; };
 		DA95E52C2242DB1E00887D6C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95E52B2242DB1E00887D6C /* DetailsViewController.swift */; };
 		DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9803D2226058300FBA66F /* AppDelegate.swift */; };
 		DAA980402226058300FBA66F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9803F2226058300FBA66F /* FirstViewController.swift */; };
@@ -44,6 +46,8 @@
 		DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionModel.swift; sourceTree = "<group>"; };
+		DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionHomeModel.swift; sourceTree = "<group>"; };
 		DA95E52B2242DB1E00887D6C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		DAA9803A2226058300FBA66F /* Project-Prophecy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Prophecy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA9803D2226058300FBA66F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA882AC2224C0DD100B09765 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */,
+				DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */,
+				DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */,
+			);
+			path = "Collection View Cells";
+			sourceTree = "<group>";
+		};
 		DAA980312226058300FBA66F = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +135,9 @@
 				DAA980462226058500FBA66F /* Assets.xcassets */,
 				DAA980482226058500FBA66F /* LaunchScreen.storyboard */,
 				DAA9804B2226058500FBA66F /* Info.plist */,
-				DA37357922418564003C6AE7 /* MovieCollectionViewCell.swift */,
-				DA6B926F224BFAE200C61DDE /* GameCollectionViewCell.swift */,
-				DA6B926D224BFAC400C61DDE /* TVCollectionViewCell.swift */,
+				DA882AC2224C0DD100B09765 /* Collection View Cells */,
+				DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */,
+				DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */,
 			);
 			path = "Project-Prophecy";
 			sourceTree = "<group>";
@@ -280,12 +294,14 @@
 				DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */,
 				DAA980422226058300FBA66F /* SecondViewController.swift in Sources */,
 				DAA9803E2226058300FBA66F /* AppDelegate.swift in Sources */,
+				DA6B9274224BFE4F00C61DDE /* TelevisionHomeModel.swift in Sources */,
 				DA37357A22418564003C6AE7 /* MovieCollectionViewCell.swift in Sources */,
 				DA95E52C2242DB1E00887D6C /* DetailsViewController.swift in Sources */,
 				DA6B9270224BFAE200C61DDE /* GameCollectionViewCell.swift in Sources */,
 				DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */,
 				DA6B926E224BFAC400C61DDE /* TVCollectionViewCell.swift in Sources */,
 				DAA980402226058300FBA66F /* FirstViewController.swift in Sources */,
+				DA6B9272224BFCCE00C61DDE /* TelevisionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

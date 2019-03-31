@@ -10,9 +10,9 @@ import UIKit
 
 class GameCollectionViewCell: UICollectionViewCell {
     
-    
+    @IBOutlet weak var game_poster: UIImageView!
     @IBOutlet weak var game_title: UILabel!
     @IBOutlet weak var game_releaseDate: UILabel!
-    @IBOutlet weak var game_poster: UIImageView!
+    
     
 }
