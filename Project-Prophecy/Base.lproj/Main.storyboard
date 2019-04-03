@@ -21,60 +21,60 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYl-00-ZfT">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Home" id="F6u-tr-Yui"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qni-3i-T48">
-                                <rect key="frame" x="16" y="92" width="74.666666666666671" height="28.666666666666671"/>
+                                <rect key="frame" x="16" y="92" width="63" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O7u-O3-Eov" userLabel="Movie Collection View">
-                                <rect key="frame" x="4" y="125" width="371" height="212"/>
+                                <rect key="frame" x="4" y="116" width="371" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="imA-Gk-570">
-                                    <size key="itemSize" width="134" height="203"/>
+                                    <size key="itemSize" width="123" height="186"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <scrollView key="backgroundView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eti-hS-JiR">
-                                    <rect key="frame" x="0.0" y="0.0" width="371" height="212"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="371" height="186"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </scrollView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movie_cell" id="zwx-bn-79z" userLabel="movie_cell" customClass="MovieCollectionViewCell" customModule="Project_Prophecy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4.666666666666667" width="134" height="203"/>
+                                        <rect key="frame" x="0.0" y="3" width="123" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="203"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="movie_poster" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-Gv-wSw">
-                                                    <rect key="frame" x="13" y="-0.66666666666666696" width="108" height="164"/>
+                                                    <rect key="frame" x="12" y="3" width="99" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="movie_title" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82w-O7-TOf">
-                                                    <rect key="frame" x="0.0" y="164.99999999999997" width="134" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="movie_releaseDate" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR9-yb-oxY" userLabel="Movie release date">
-                                                    <rect key="frame" x="0.0" y="183.99999999999997" width="134" height="13"/>
+                                                    <rect key="frame" x="0.0" y="166" width="123" height="8"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="movie_title" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82w-O7-TOf">
+                                                    <rect key="frame" x="0.0" y="154" width="123" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="134" height="203"/>
+                                        <size key="customSize" width="123" height="180"/>
                                         <connections>
                                             <outlet property="movie_poster" destination="ddh-Gv-wSw" id="i53-F3-g47"/>
                                             <outlet property="movie_releaseDate" destination="xR9-yb-oxY" id="qfp-Yz-nIQ"/>
@@ -88,47 +88,47 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqE-XM-DLm" userLabel="Video Games">
-                                <rect key="frame" x="16" y="345" width="139" height="29"/>
+                                <rect key="frame" x="16" y="304" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P6A-aN-MM0" userLabel="Game Collection View">
-                                <rect key="frame" x="4" y="380" width="371" height="212"/>
+                                <rect key="frame" x="5" y="328" width="371" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rJf-g3-pNA">
-                                    <size key="itemSize" width="134" height="203"/>
+                                    <size key="itemSize" width="123" height="186"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <scrollView key="backgroundView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1z5-d2-cQj">
-                                    <rect key="frame" x="0.0" y="0.0" width="371" height="212"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="371" height="186"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </scrollView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="game_cell" id="ywN-xH-Poa" userLabel="game_cell" customClass="GameCollectionViewCell" customModule="Project_Prophecy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4.666666666666667" width="134" height="203"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="203"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="186"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="game_poster" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-b3-E5c" userLabel="Game poster">
-                                                    <rect key="frame" x="13" y="0.0" width="108" height="164"/>
+                                                    <rect key="frame" x="12" y="3" width="99" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="game_title" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iny-Zb-w8w" userLabel="Game title">
-                                                    <rect key="frame" x="0.0" y="165" width="134" height="18"/>
+                                                    <rect key="frame" x="0.0" y="154" width="123" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="game_releaseDate" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-D3-GC1" userLabel="Game release date">
-                                                    <rect key="frame" x="0.0" y="180" width="134" height="18"/>
+                                                    <rect key="frame" x="0.0" y="166" width="123" height="8"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <nil key="textColor"/>
@@ -136,6 +136,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <size key="customSize" width="123" height="186"/>
                                         <connections>
                                             <outlet property="game_poster" destination="TEj-b3-E5c" id="oft-6m-WGx"/>
                                             <outlet property="game_releaseDate" destination="YUg-D3-GC1" id="Buk-1L-CMK"/>
@@ -149,47 +150,47 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TV Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rim-c2-MSt" userLabel="TV Shows">
-                                <rect key="frame" x="16" y="600" width="106" height="29"/>
+                                <rect key="frame" x="16" y="515" width="89" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WYu-sO-hbw" userLabel="TV Collection View">
-                                <rect key="frame" x="4" y="637" width="371" height="213"/>
+                                <rect key="frame" x="4" y="541" width="371" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Fd-w1-GyE">
-                                    <size key="itemSize" width="118" height="200"/>
+                                    <size key="itemSize" width="123" height="186"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <scrollView key="backgroundView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="afg-Az-X9a">
-                                    <rect key="frame" x="0.0" y="0.0" width="371" height="213"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="371" height="186"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </scrollView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tv_cell" id="PBD-Vc-cOp" userLabel="tv_cell" customClass="TVCollectionViewCell" customModule="Project_Prophecy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="5" width="134" height="203"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="203"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="186"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="tv_poster" translatesAutoresizingMaskIntoConstraints="NO" id="wIU-qY-E46" userLabel="TV poster">
-                                                    <rect key="frame" x="13" y="0.0" width="108" height="164"/>
+                                                    <rect key="frame" x="12" y="2" width="99" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="tv_title" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9h-gr-dIA" userLabel="TV title">
-                                                    <rect key="frame" x="0.0" y="165" width="134" height="18"/>
+                                                    <rect key="frame" x="0.0" y="154" width="123" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="tv_releaseDate" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFW-IP-L6z" userLabel="TV release date">
-                                                    <rect key="frame" x="0.0" y="181" width="134" height="18"/>
+                                                    <rect key="frame" x="0.0" y="166" width="123" height="8"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <nil key="textColor"/>
@@ -197,7 +198,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="134" height="203"/>
+                                        <size key="customSize" width="123" height="186"/>
                                         <connections>
                                             <outlet property="tv_poster" destination="wIU-qY-E46" id="fn8-qC-8KY"/>
                                             <outlet property="tv_releaseDate" destination="jFW-IP-L6z" id="Ms2-jL-7l7"/>
@@ -211,7 +212,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf" userLabel="Home"/>
@@ -223,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="-41"/>
+            <point key="canvasLocation" x="120.8" y="-41.379310344827587"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="MBc-Wv-P8D">
@@ -240,9 +241,10 @@
                                     <navigationItem title="Details" id="Zoj-fL-akG">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="UdR-AE-l3g">
                                             <connections>
-                                                <segue destination="9pv-A4-QxB" kind="show" id="BB2-5U-EKH"/>
+                                                <segue destination="49e-Tb-3d3" kind="show" id="RCy-xa-SaU"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="WPJ-WI-dYX"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -349,7 +351,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aFp-hz-h1N"/>
-        <segue reference="BB2-5U-EKH"/>
+        <segue reference="bOn-Zm-hza"/>
     </inferredMetricsTieBreakers>
 </document>

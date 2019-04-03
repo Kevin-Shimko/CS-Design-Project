@@ -26,10 +26,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var game_collectionView: UICollectionView!
     @IBOutlet var tv_collectionView: UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view, typically from a nib.
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
