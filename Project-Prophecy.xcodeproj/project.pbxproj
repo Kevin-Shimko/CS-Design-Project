@@ -129,21 +129,16 @@
 		DAA9803C2226058300FBA66F /* Project-Prophecy */ = {
 			isa = PBXGroup;
 			children = (
-				DA95E52B2242DB1E00887D6C /* DetailsViewController.swift */,
-				DAA9806F222727CE00FBA66F /* HomeModel.swift */,
-				DAA9806D222727C200FBA66F /* MovieModel.swift */,
+				DA882AC2224C0DD100B09765 /* Collection View Cells */,
+				DAF78D312255161A007AC4E8 /* Data Models */,
 				DAA9803D2226058300FBA66F /* AppDelegate.swift */,
 				DAA9803F2226058300FBA66F /* FirstViewController.swift */,
 				DAA980412226058300FBA66F /* SecondViewController.swift */,
+				DA95E52B2242DB1E00887D6C /* DetailsViewController.swift */,
 				DAA980432226058300FBA66F /* Main.storyboard */,
 				DAA980462226058500FBA66F /* Assets.xcassets */,
 				DAA980482226058500FBA66F /* LaunchScreen.storyboard */,
 				DAA9804B2226058500FBA66F /* Info.plist */,
-				DA882AC2224C0DD100B09765 /* Collection View Cells */,
-				DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */,
-				DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */,
-				DA2A3C5622513B900065B7B4 /* GameHomeModel.swift */,
-				DA2A3C5422513A700065B7B4 /* GameModel.swift */,
 			);
 			path = "Project-Prophecy";
 			sourceTree = "<group>";
@@ -164,6 +159,19 @@
 				DAA980612226058600FBA66F /* Info.plist */,
 			);
 			path = "Project-ProphecyUITests";
+			sourceTree = "<group>";
+		};
+		DAF78D312255161A007AC4E8 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAA9806D222727C200FBA66F /* MovieModel.swift */,
+				DAA9806F222727CE00FBA66F /* HomeModel.swift */,
+				DA6B9271224BFCCE00C61DDE /* TelevisionModel.swift */,
+				DA6B9273224BFE4F00C61DDE /* TelevisionHomeModel.swift */,
+				DA2A3C5422513A700065B7B4 /* GameModel.swift */,
+				DA2A3C5622513B900065B7B4 /* GameHomeModel.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
