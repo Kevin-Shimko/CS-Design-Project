@@ -8,13 +8,14 @@ class MovieModel : NSObject {
   var backdrop_path: String?
   var overview: String?
   var release_date: String?
+  var IsFavorite: String?
 
     
     override init(){
         
     }
   
-  init(id: String, title: String, poster_path: String, backdrop_path: String, overview: String, release_date: String)
+    init(id: String, title: String, poster_path: String, backdrop_path: String, overview: String, release_date: String)
   {
       self.id = id
       self.title = title
@@ -22,6 +23,7 @@ class MovieModel : NSObject {
       self.backdrop_path = backdrop_path
       self.overview = overview
       self.release_date = release_date
+    self.IsFavorite = "0"
 
   }
   

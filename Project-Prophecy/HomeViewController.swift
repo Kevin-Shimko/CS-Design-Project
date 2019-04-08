@@ -8,13 +8,14 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, HomeModelProtocol,TVHomeModelProtocol, GameHomeModelProtocol {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, HomeModelProtocol,TVHomeModelProtocol, GameHomeModelProtocol {
     
     var feedItems: NSArray = NSArray()
     var feedTVItems: NSArray = NSArray()
     var feedGameItems: NSArray = NSArray()
     
     var dataToSend: AnyObject?
+    var userToReceive: UserModel?
     //var selectedMovie : MovieModel = MovieModel() //??
     
     //let reuseIdentifier = "movie_cell"
@@ -29,7 +30,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -55,6 +56,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         let gameHomeModel = GameHomeModel()
         gameHomeModel.delegate = self
         gameHomeModel.downloadItems()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func itemsDownload(items: NSArray) {
