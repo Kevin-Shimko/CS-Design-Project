@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DetailsViewController: UIViewController {
 
     var apiImageLink = "https://image.tmdb.org/t/p/w780/"
@@ -85,12 +86,10 @@ class DetailsViewController: UIViewController {
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let parameters: [String: Any] = [
-            "favorite": 1,
-            "id": id
-        ]
-        //let postString = "a=\(0)&b=\(id)"
-        //request.httpBody = postString.data(using: String.Encoding.utf8, allowLossyConversion: true)
+
+        
+        let postString = "favorite=\(0)&id=\(id)"
+        request.httpBody = postString.data(using: String.Encoding.utf8, allowLossyConversion: true)
         //print(request.httpBody)
         //request.httpBody = parameters.percentEscaped().data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request){
@@ -104,7 +103,6 @@ class DetailsViewController: UIViewController {
             //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print("responseString = \(responseString)")
         }
         
         task.resume()
