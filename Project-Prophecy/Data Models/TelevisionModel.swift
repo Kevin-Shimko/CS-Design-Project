@@ -2,7 +2,7 @@
 //  TelevisionModel.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 3/27/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 3/27/19.
 //  Copyright © 2019 KSS. All rights reserved.
 //
 
@@ -30,7 +30,4 @@ class TelevisionModel : NSObject {
         self.air_date = air_date
     }
     
-    /*override var description: String {
-        return "id: \(televisionID), title: \(title), poster_path: \(poster_path), backdrop_path: \(backdrop_path), overview: \(overview),Release Date: \(air_date)"
-    }*/
 }

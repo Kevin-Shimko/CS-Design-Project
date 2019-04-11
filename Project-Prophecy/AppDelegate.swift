@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 2/26/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 2/26/19.
 //  Copyright © 2019 KSS. All rights reserved.
 // test
 

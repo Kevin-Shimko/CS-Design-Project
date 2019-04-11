@@ -53,14 +53,14 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             if let id = jsonElement["id"] as? String,
                let title = jsonElement["title"] as? String,
                let poster_path = jsonElement["poster_path"] as? String,
-               let backdrop_path = jsonElement["backdrop_path"] as? String,
+               //let backdrop_path = jsonElement["backdrop_path"] as? String,
                let overview = jsonElement["overview"] as? String,
                let release_date = jsonElement["release_date"] as? String
             {
                 movie.id = id
                 movie.title = title
                 movie.poster_path = poster_path
-                movie.backdrop_path = backdrop_path
+                //movie.backdrop_path = backdrop_path
                 movie.overview = overview
                 movie.release_date = release_date
             }

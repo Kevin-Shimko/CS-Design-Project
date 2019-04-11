@@ -2,7 +2,7 @@
 //  FriendFavoriteCollectionViewCell.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 4/7/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 4/7/19.
 //  Copyright © 2019 KSS. All rights reserved.
 //
 

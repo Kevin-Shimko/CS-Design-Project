@@ -2,7 +2,7 @@
 //  FriendCollectionViewCell.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 4/3/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 4/3/19.
 //  Copyright © 2019 KSS. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ class FriendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friend_image: UIImageView!
     @IBOutlet weak var friend_name: UILabel!
-    
     
     func displayContent(name: String, image: UIImage)
     {

@@ -30,6 +30,7 @@
 		DAA980602226058600FBA66F /* Project_ProphecyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9805F2226058600FBA66F /* Project_ProphecyUITests.swift */; };
 		DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9806D222727C200FBA66F /* MovieModel.swift */; };
 		DAA98070222727CE00FBA66F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9806F222727CE00FBA66F /* HomeModel.swift */; };
+		DAC5D2B3225EA41200106536 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5D2B2225EA41200106536 /* UITabBarViewController.swift */; };
 		DAF78D3322551BE8007AC4E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF78D3222551BE8007AC4E8 /* LoginViewController.swift */; };
 		DAF78D37225520D3007AC4E8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF78D36225520D3007AC4E8 /* UserModel.swift */; };
 		DAF78D3922552168007AC4E8 /* UserHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF78D3822552168007AC4E8 /* UserHomeModel.swift */; };
@@ -84,6 +85,7 @@
 		DAA980612226058600FBA66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA9806D222727C200FBA66F /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		DAA9806F222727CE00FBA66F /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		DAC5D2B2225EA41200106536 /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
 		DAF78D3222551BE8007AC4E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAF78D36225520D3007AC4E8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DAF78D3822552168007AC4E8 /* UserHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeModel.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				DAA980412226058300FBA66F /* ProfileViewController.swift */,
 				DA414965225A74D700419FDF /* FriendViewController.swift */,
 				DA95E52B2242DB1E00887D6C /* DetailsViewController.swift */,
+				DAC5D2B2225EA41200106536 /* UITabBarViewController.swift */,
 				DAA980432226058300FBA66F /* Main.storyboard */,
 				DAA980462226058500FBA66F /* Assets.xcassets */,
 				DAA980482226058500FBA66F /* LaunchScreen.storyboard */,
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC5D2B3225EA41200106536 /* UITabBarViewController.swift in Sources */,
 				DAF78D3F22553ACF007AC4E8 /* FriendCollectionViewCell.swift in Sources */,
 				DAF78D3322551BE8007AC4E8 /* LoginViewController.swift in Sources */,
 				DAA9806E222727C200FBA66F /* MovieModel.swift in Sources */,
@@ -542,7 +546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Shimko.Project-Prophecy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -560,7 +564,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Shimko.Project-Prophecy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

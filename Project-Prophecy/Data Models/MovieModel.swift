@@ -26,9 +26,5 @@ class MovieModel : NSObject {
     self.IsFavorite = "0"
 
   }
-  
-  /*override var description: String {
-    return "id: \(id), title: \(title), poster_path: \(poster_path), backdrop_path: \(backdrop_path), overview: \(overview),Release Date: \(release_date)"
-  }*/
 
 }

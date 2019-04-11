@@ -2,9 +2,9 @@
 //  LoginViewController.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 4/3/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 4/3/19.
 //  Copyright © 2019 KSS. All rights reserved.
-// update
+// 
 
 import UIKit
 
@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, UserHomeModelProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let userHomeModel = UserHomeModel()
         userHomeModel.delegate = self
@@ -28,30 +28,50 @@ class LoginViewController: UIViewController, UserHomeModelProtocol {
     func itemsDownload(items: NSArray) {
         feedItems = items
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     @IBAction func LoginButton(_ sender: Any) {
         var login = false
-        //for i in 0 ... feedItems.count-1
-        //{
-            //let user = feedItems[i] as! UserModel
             
-            if("Sam" == usernameField.text && "12345" == passwordField.text){
-                NSLog("Login Successful")
-                //userToSend = user
-                //login = true
-            }
-        //}
+        if("Sam" == usernameField.text && "12345" == passwordField.text){
+            NSLog("Login Successful")
+            login = true
+        }
+        else if("Kevin" == usernameField.text && "12345" == passwordField.text){
+            NSLog("Login Successful")
+            login = true
+            
+        }
+        else if("Scott" == usernameField.text && "12345" == passwordField.text){
+            NSLog("Login Successful")
+            login = true
+            
+        }
         
         if login == false{
             NSLog("Login Failed")
+            self.displayErrorMessage(message: "Username or Password is incorrect")
         }
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let homeScreen = segue.destination as! FirstViewController
+    func displayErrorMessage(message:String){
+        let alertView = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default){(action:UIAlertAction) in }
+        alertView.addAction(OKAction)
+        self.present(alertView, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        homeScreen.userToReceive = userToSend
-    }*/
+        let tabBarController = segue.destination as! UITabBarController
+        let navController = tabBarController.viewControllers![1] as! UINavigationController
+        let user = navController.topViewController as! ProfileViewController
+        user.globalUsername = usernameField.text!
+        
+    }
     
     
     /*

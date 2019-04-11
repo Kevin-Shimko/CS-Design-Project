@@ -2,7 +2,7 @@
 //  FriendViewController.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 4/7/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 4/7/19.
 //  Copyright © 2019 KSS. All rights reserved.
 //
 
@@ -61,6 +61,20 @@ class FriendViewController: UIViewController, UICollectionViewDelegate, UICollec
         favorite_cell?.displayContent(name: favorite.Title!, releaseDate: favorite.Release_Date!, image: poster)
         
         return favorite_cell!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "friendFavoriteDetails"){
+            
+            let detail = segue.destination as! DetailsViewController
+            let indexPaths = self.friendFavColllectionView!.indexPathsForSelectedItems!
+            let indexPath = indexPaths[0] as NSIndexPath
+            let favorite: FavoriteModel = feedItems[indexPath.row] as! FavoriteModel
+            
+            detail.favoriteToReceive = favorite
+            detail.objectType = "Favorite"
+        }
+        
     }
     
     func GetPoster(posterPath: String){

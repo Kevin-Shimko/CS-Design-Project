@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 2/26/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 2/26/19.
 //  Copyright © 2019 KSS. All rights reserved.
 // test
 
@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     var feedFavoriteItems: NSArray = NSArray()
     var poster: UIImage = UIImage()
     
+    var globalUsername:String = ""
+    
+    
 //    var movie: MovieModel()
     
     @IBOutlet weak var profile_image: UIImageView!
@@ -21,9 +24,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var friendCollectionView: UICollectionView!
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print(globalUsername)
+
         // Do any additional setup after loading the view, typically from a nib.
         profile_image.layer.borderWidth = 1
         profile_image.layer.masksToBounds = false
@@ -44,25 +52,43 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         let favoriteHomeModel = FavoriteHomeModel()
         favoriteHomeModel.delegate = self
         favoriteHomeModel.downloadItems()
+        
     }
 
     func itemsDownload(items: NSArray) {
         feedItems = items
         
         //Determines User
-        let user = feedItems[0] as! UserModel
         
-        GetPoster(posterPath: user.ProfilePicture!)
-        profile_image.image = poster
-        profile_username.text = user.Username
-        self.friendCollectionView.reloadData()
-        //GetFriends()
+        if(globalUsername == "Sam"){
+            let user = feedItems[0] as! UserModel
+            
+            GetPoster(posterPath: user.ProfilePicture!)
+            profile_image.image = poster
+            profile_username.text = user.Username
+            self.friendCollectionView.reloadData()
+        }
+        else if(globalUsername == "Scott"){
+            let user = feedItems[1] as! UserModel
+            
+            GetPoster(posterPath: user.ProfilePicture!)
+            profile_image.image = poster
+            profile_username.text = user.Username
+            self.friendCollectionView.reloadData()
+        }
+        else if(globalUsername == "Kevin"){
+            let user = feedItems[2] as! UserModel
+            
+            GetPoster(posterPath: user.ProfilePicture!)
+            profile_image.image = poster
+            profile_username.text = user.Username
+            self.friendCollectionView.reloadData()
+        }
     }
     
     func favoriteItemsDownload(items: NSArray) {
         feedFavoriteItems = items
         self.favoriteCollectionView.reloadData()
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,7 +99,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         else{
             return feedFavoriteItems.count
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -138,6 +163,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.favoriteCollectionView.reloadData()
+    }
+    
+    @IBAction func refreshNav(_ sender: Any) {
+        print("reload pressed")
 
+        //favoriteCollectionView.reloadData()
+        self.viewWillAppear(true)
+        self.viewDidLoad()
+    }
+    
 }
-

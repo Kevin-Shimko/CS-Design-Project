@@ -10,12 +10,20 @@ class FavoriteHomeModel: NSObject, URLSessionDataDelegate {
     
     var data = Data()
     
-    let urlPath: String = "http://prophecyapplication.com/GetUserMovies.php"
+    //let urlPath: String = "http://prophecyapplication.com/GetUserMovies.php"
     
     func downloadItems(){
         
-        let url: URL = URL(string: urlPath)!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        let url: URL = URL(string: "http://prophecyapplication.com/GetUserMovies.php")!
+        
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        //let session = URLSession.init(configuration: config)
+        let defaultSession = Foundation.URLSession.init(configuration: config)
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
         
         let task = defaultSession.dataTask(with: url)
         { (data, response, error) in

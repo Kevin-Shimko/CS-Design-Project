@@ -2,7 +2,7 @@
 //  DetailsViewController.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 3/20/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 3/20/19.
 //  Copyright © 2019 KSS. All rights reserved.
 //
 
@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         if(objectType == "Movie"){
             details_title.text = movieToReceieve?.title
-            GetPoster(posterPath: apiImageLink + movieToReceieve!.poster_path!)
+            GetPoster(posterPath: movieToReceieve!.poster_path!)
             details_poster.image = poster
             details_overview.text = movieToReceieve?.overview
             details_releaseDate.text = movieToReceieve?.release_date
@@ -81,14 +81,20 @@ class DetailsViewController: UIViewController {
     
     @IBAction func favAction() {
         print("fav pressed")
+        
+        let alertView = UIAlertController(title: "", message: "Favorite added", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default){(action:UIAlertAction) in }
+        alertView.addAction(OKAction)
+        self.present(alertView, animated: true, completion: nil)
+        
+        
         movieToReceieve?.IsFavorite = "1"
         let url = URL(string: "http://prophecyapplication.com/POST.php")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-
         
-        let postString = "favorite=\(0)&id=\(id)"
+        let postString = "favorite=\(1)&id=\(id)"
         request.httpBody = postString.data(using: String.Encoding.utf8, allowLossyConversion: true)
         //print(request.httpBody)
         //request.httpBody = parameters.percentEscaped().data(using: .utf8)
@@ -99,8 +105,6 @@ class DetailsViewController: UIViewController {
                 print("error=\(error)")
                 return
             }
-            
-            //print("response = \(response)")
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         }

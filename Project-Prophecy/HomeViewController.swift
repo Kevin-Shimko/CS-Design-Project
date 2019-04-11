@@ -2,7 +2,7 @@
 //  FirstViewController.swift
 //  Project-Prophecy
 //
-//  Created by Kevin Shimko on 2/26/19.
+//  Created by Kevin Shimko, Scott Welsh, and Sam Zdolshek on 2/26/19.
 //  Copyright © 2019 KSS. All rights reserved.
 // 
 
@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var feedItems: NSArray = NSArray()
     var feedTVItems: NSArray = NSArray()
     var feedGameItems: NSArray = NSArray()
+    
+    //var globalUsername1:String = ""
     
     var dataToSend: AnyObject?
     var userToReceive: UserModel?
@@ -32,6 +34,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //print(globalUsername1)
+
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
@@ -100,7 +105,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let item: MovieModel = feedItems[indexPath.row] as! MovieModel
             
             //Get Poster background
-            let apiCall = apiImageLink + item.poster_path!
+            let apiCall = item.poster_path!
             if let url = URL(string: apiCall){
                 do {
                     let data = try Data(contentsOf: url)
@@ -169,9 +174,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let indexPaths = self.collectionView!.indexPathsForSelectedItems!
             let indexPath = indexPaths[0] as NSIndexPath
             let movie: MovieModel = feedItems[indexPath.row] as! MovieModel
-        
+            
+            //let globalUser = segue.destination as! ProfileViewController
+
             detail.movieToReceieve = movie
             detail.objectType = "Movie"
+            //globalUser.globalUsername = globalUsername1
         }
         else if (segue.identifier == "GameDetails"){
             let detail = segue.destination as! DetailsViewController
@@ -192,6 +200,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             detail.objectType = "Show"
         }
     }
+    
     
 }
 

@@ -71,5 +71,4 @@ class UserHomeModel: NSObject, URLSessionDataDelegate {
         })
     }
     
-    
 }
