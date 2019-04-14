@@ -50,19 +50,20 @@ class TelevisionHomeModel: NSObject, URLSessionDataDelegate {
             
             let tv = TelevisionModel()
             
-            if let id = jsonElement["televisionID"] as? String,
-                let title = jsonElement["Title"] as? String,
+            if let id = jsonElement["id"] as? String,
+                let title = jsonElement["title"] as? String,
                 let poster_path = jsonElement["poster_path"] as? String,
-                let backdrop_path = jsonElement["backdrop_path"] as? String,
                 let overview = jsonElement["overview"] as? String,
-                let release_date = jsonElement["First_Air_Date"] as? String
+                let release_date = jsonElement["release_date"] as? String,
+                let platform = jsonElement["platform"] as? String
             {
                 tv.televisionID = id
                 tv.title = title
                 tv.poster_path = poster_path
-                tv.backdrop_path = backdrop_path
+                //tv.backdrop_path = backdrop_path
                 tv.overview = overview
                 tv.air_date = release_date
+                tv.platform = platform
             }
             
             shows.add(tv)

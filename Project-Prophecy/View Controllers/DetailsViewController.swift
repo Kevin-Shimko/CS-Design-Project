@@ -21,7 +21,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var details_title: UILabel!
     @IBOutlet weak var details_releaseDate: UILabel!
     @IBOutlet weak var details_overview: UILabel!
-
+    @IBOutlet weak var details_platform: UILabel!
+    
     @IBOutlet weak var favButton: UIButton!
     
 
@@ -52,11 +53,12 @@ class DetailsViewController: UIViewController {
             id = gameToReceive!.gameID!
         }else if(objectType == "Show"){
             details_title.text = showToReceive?.title
-            GetPoster(posterPath: apiImageLink + showToReceive!.poster_path!)
+            GetPoster(posterPath: showToReceive!.poster_path!)
             details_poster.image = poster
             details_overview.text = showToReceive?.overview
             details_releaseDate.text = showToReceive?.air_date
             id = showToReceive!.televisionID!
+            details_platform.text = showToReceive?.platform
         }
         else{
             details_title.text = favoriteToReceive?.Title

@@ -13,7 +13,7 @@ class FavoriteModel : NSObject {
     var Title: String?
     var Poster_Path: String?
     var IsFavorite: String?
-    var EntityID: String?
+    var Platform: String?
     var Release_Date: String?
     var Overview: String?
     
@@ -21,13 +21,13 @@ class FavoriteModel : NSObject {
         
     }
     
-    init(FavoriteID: String, Title: String, Poster_Path: String, IsFavorite: String, EntityID: String, Release_Date: String, Overview: String)
+    init(FavoriteID: String, Title: String, Poster_Path: String, IsFavorite: String, Platform: String, Release_Date: String, Overview: String)
     {
         self.FavoriteID = FavoriteID
         self.Title = Title
         self.Poster_Path = Poster_Path
         self.IsFavorite = IsFavorite
-        self.EntityID = EntityID
+        self.Platform = Platform
         self.Release_Date = Release_Date
         self.Overview = Overview
     }

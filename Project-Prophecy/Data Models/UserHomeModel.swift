@@ -12,6 +12,8 @@ class UserHomeModel: NSObject, URLSessionDataDelegate {
     
     let urlPath: String = "http://prophecyapplication.com/GetUsers.php"
     
+    var currentUser:String = ""
+    
     func downloadItems(){
         
         let url: URL = URL(string: urlPath)!
@@ -64,6 +66,7 @@ class UserHomeModel: NSObject, URLSessionDataDelegate {
             }
             
             users.add(user)
+            
         }
         
         DispatchQueue.main.async(execute: { () -> Void in

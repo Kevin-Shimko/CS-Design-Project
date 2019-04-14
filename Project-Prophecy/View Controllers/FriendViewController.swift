@@ -38,6 +38,7 @@ class FriendViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let homeModel = FriendHomeModel()
         homeModel.delegate = self
+        homeModel.selectedUser = friendToReceive!.Username!
         homeModel.downloadItems()
         // Do any additional setup after loading the view.
     }

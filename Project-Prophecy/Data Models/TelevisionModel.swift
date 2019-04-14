@@ -15,12 +15,13 @@ class TelevisionModel : NSObject {
     var backdrop_path: String?
     var overview: String?
     var poster_path:String?
+    var platform:String?
     
     override init(){
         
     }
     
-    init(id: String, title: String, poster_path: String, backdrop_path: String, overview: String, air_date: String)
+    init(id: String, title: String, poster_path: String, backdrop_path: String, overview: String, air_date: String, platform: String)
     {
         self.televisionID = id
         self.title = title
@@ -28,6 +29,7 @@ class TelevisionModel : NSObject {
         self.backdrop_path = backdrop_path
         self.overview = overview
         self.air_date = air_date
+        self.platform = platform
     }
     
 }

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UserHomeModelProtocol, FavoriteHomeModelProtocol {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, FriendDataModelProtocol, FavoriteHomeModelProtocol, UserHomeModelProtocol {
     
     var feedItems: NSArray = NSArray()
     var feedFavoriteItems: NSArray = NSArray()
+    var feedUserItems: NSArray = NSArray()
     var poster: UIImage = UIImage()
     
     var globalUsername:String = ""
@@ -30,7 +31,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         
         
-        print(globalUsername)
+        //print(globalUsername)
 
         // Do any additional setup after loading the view, typically from a nib.
         profile_image.layer.borderWidth = 1
@@ -45,45 +46,56 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.favoriteCollectionView.delegate = self
         self.favoriteCollectionView.dataSource = self
         
+        let friendData = FriendDataModel()
+        friendData.currentUser = globalUsername
+        friendData.delegate = self
+        friendData.downloadItems()
+        
         let userHomeModel = UserHomeModel()
         userHomeModel.delegate = self
         userHomeModel.downloadItems()
         
         let favoriteHomeModel = FavoriteHomeModel()
         favoriteHomeModel.delegate = self
+        favoriteHomeModel.currentUser = globalUsername
         favoriteHomeModel.downloadItems()
         
     }
 
     func itemsDownload(items: NSArray) {
-        feedItems = items
+        feedUserItems = items
         
         //Determines User
         
         if(globalUsername == "Sam"){
-            let user = feedItems[0] as! UserModel
+            let user = feedUserItems[0] as! UserModel
             
             GetPoster(posterPath: user.ProfilePicture!)
             profile_image.image = poster
             profile_username.text = user.Username
-            self.friendCollectionView.reloadData()
+            //self.friendCollectionView.reloadData()
         }
         else if(globalUsername == "Scott"){
-            let user = feedItems[1] as! UserModel
+            let user = feedUserItems[1] as! UserModel
             
             GetPoster(posterPath: user.ProfilePicture!)
             profile_image.image = poster
             profile_username.text = user.Username
-            self.friendCollectionView.reloadData()
+            //self.friendCollectionView.reloadData()
         }
         else if(globalUsername == "Kevin"){
-            let user = feedItems[2] as! UserModel
+            let user = feedUserItems[2] as! UserModel
             
             GetPoster(posterPath: user.ProfilePicture!)
             profile_image.image = poster
             profile_username.text = user.Username
-            self.friendCollectionView.reloadData()
+            //self.friendCollectionView.reloadData()
         }
+    }
+    
+    func friendItemsDownload(items: NSArray){
+        feedItems = items
+        self.friendCollectionView.reloadData()
     }
     
     func favoriteItemsDownload(items: NSArray) {
@@ -94,7 +106,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Return the number of feed items
         if collectionView == friendCollectionView.self{
-            return feedItems.count-1
+            return feedItems.count
         }
         else{
             return feedFavoriteItems.count
@@ -106,7 +118,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             let friend_cell = friendCollectionView.dequeueReusableCell(withReuseIdentifier: "friend_cell", for: indexPath) as? FriendCollectionViewCell
             
             // Get the location to be shown
-            let user: UserModel = feedItems[indexPath.row + 1] as! UserModel
+            let user: UserModel = feedItems[indexPath.row] as! UserModel
             
             //Get Poster background
             GetPoster(posterPath: user.ProfilePicture!)
@@ -146,7 +158,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             let friendDetails = segue.destination as! FriendViewController
             let indexPaths = self.friendCollectionView!.indexPathsForSelectedItems!
             let indexPath = indexPaths[0] as NSIndexPath
-            let friend: UserModel = feedItems[indexPath.row+1] as! UserModel
+            let friend: UserModel = feedItems[indexPath.row] as! UserModel
             
             
             friendDetails.friendToReceive = friend

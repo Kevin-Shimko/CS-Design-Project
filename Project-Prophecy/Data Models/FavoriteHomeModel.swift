@@ -10,33 +10,84 @@ class FavoriteHomeModel: NSObject, URLSessionDataDelegate {
     
     var data = Data()
     
+    var currentUser:String = ""
+    
     //let urlPath: String = "http://prophecyapplication.com/GetUserMovies.php"
     
     func downloadItems(){
-        
-        let url: URL = URL(string: "http://prophecyapplication.com/GetUserMovies.php")!
-        
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
-        config.urlCache = nil
-        //let session = URLSession.init(configuration: config)
-        let defaultSession = Foundation.URLSession.init(configuration: config)
-        URLCache.shared.removeAllCachedResponses()
-        URLCache.shared.diskCapacity = 0
-        URLCache.shared.memoryCapacity = 0
-        
-        let task = defaultSession.dataTask(with: url)
-        { (data, response, error) in
+        //let url: URL = URL(string: "http://prophecyapplication.com/GetUserMovies.php")!
+
+        if(currentUser == "Sam"){
+            let url: URL = URL(string: "http://prophecyapplication.com/GetSamFavorites.php")!
+            let config = URLSessionConfiguration.default
+            // config.requestCachePolicy = .reloadIgnoringLocalCacheData
+            // config.urlCache = nil
+            //let session = URLSession.init(configuration: config)
+            let defaultSession = Foundation.URLSession.init(configuration: config)
+            // URLCache.shared.removeAllCachedResponses()
+            //URLCache.shared.diskCapacity = 0
+            //URLCache.shared.memoryCapacity = 0
             
-            if error != nil{
-                print("Failed to download data")
-            }else{
-                print("Data downloaded")
-                self.parseJSON(data!)
+            let task = defaultSession.dataTask(with: url)        { (data, response, error) in
+                
+                if error != nil{
+                    print("Failed to download data")
+                }else{
+                    print("Data downloaded")
+                    self.parseJSON(data!)
+                }
             }
+            
+            task.resume()
+        }
+        else if(currentUser == "Kevin"){
+            let url: URL = URL(string: "http://prophecyapplication.com/GetKevinFavorites.php")!
+            let config = URLSessionConfiguration.default
+            // config.requestCachePolicy = .reloadIgnoringLocalCacheData
+            // config.urlCache = nil
+            //let session = URLSession.init(configuration: config)
+            let defaultSession = Foundation.URLSession.init(configuration: config)
+            // URLCache.shared.removeAllCachedResponses()
+            //URLCache.shared.diskCapacity = 0
+            //URLCache.shared.memoryCapacity = 0
+            
+            let task = defaultSession.dataTask(with: url)        { (data, response, error) in
+                
+                if error != nil{
+                    print("Failed to download data")
+                }else{
+                    print("Data downloaded")
+                    self.parseJSON(data!)
+                }
+            }
+            
+            task.resume()
+        }
+        else{
+            let url: URL = URL(string: "http://prophecyapplication.com/GetScottFavorites.php")!
+            let config = URLSessionConfiguration.default
+            // config.requestCachePolicy = .reloadIgnoringLocalCacheData
+            // config.urlCache = nil
+            //let session = URLSession.init(configuration: config)
+            let defaultSession = Foundation.URLSession.init(configuration: config)
+            // URLCache.shared.removeAllCachedResponses()
+            //URLCache.shared.diskCapacity = 0
+            //URLCache.shared.memoryCapacity = 0
+            
+            let task = defaultSession.dataTask(with: url)        { (data, response, error) in
+                
+                if error != nil{
+                    print("Failed to download data")
+                }else{
+                    print("Data downloaded")
+                    self.parseJSON(data!)
+                }
+            }
+            
+            task.resume()
         }
         
-        task.resume()
+
     }
     
     func parseJSON(_ data:Data) {
@@ -58,19 +109,19 @@ class FavoriteHomeModel: NSObject, URLSessionDataDelegate {
             
             let favorite = FavoriteModel()
             
-            if let FavoriteID = jsonElement["FavoriteID"] as? String,
-                let Title = jsonElement["Title"] as? String,
-                let Poster_Path = jsonElement["Poster_Path"] as? String,
-                let IsFavorite = jsonElement["IsFavorite"] as? String,
-                let EntityID = jsonElement["EntityID"] as? String,
-                let Release_Date = jsonElement["Release_Date"] as? String,
-                let Overview = jsonElement["Overview"] as? String
+            if let FavoriteID = jsonElement["id"] as? String,
+                let Title = jsonElement["title"] as? String,
+                let Poster_Path = jsonElement["poster_path"] as? String,
+                let Overview = jsonElement["overview"] as? String,
+                let Release_Date = jsonElement["release_date"] as? String,
+                let Platform = jsonElement["platform"] as? String,
+                let IsFavorite = jsonElement["IsFavorite"] as? String
             {
                 favorite.FavoriteID = FavoriteID
                 favorite.Title = Title
                 favorite.Poster_Path = Poster_Path
                 favorite.IsFavorite = IsFavorite
-                favorite.EntityID = EntityID
+                favorite.Platform = Platform
                 favorite.Release_Date = Release_Date
                 favorite.Overview = Overview
             }

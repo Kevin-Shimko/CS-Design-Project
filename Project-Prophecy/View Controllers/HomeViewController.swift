@@ -148,7 +148,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let tv_item: TelevisionModel = feedTVItems[indexPath.row] as! TelevisionModel
             
             //Get Poster background
-            let apiCall = apiImageLink + tv_item.poster_path!
+            let apiCall = tv_item.poster_path!
             if let url = URL(string: apiCall){
                 do {
                     let data = try Data(contentsOf: url)
